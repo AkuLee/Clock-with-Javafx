@@ -97,10 +97,10 @@ public class Clock extends Application {
 
             if (i == 2) { // Display two dots
                 dots++;
-                displayTwoDots(200, 115 + i * 40 - 5);
+                displayTwoDots(200, 115 + i * 40);
             } else if (i == 4) {
                 dots++;
-                displayTwoDots(200, 115 + i * 40 + 10);
+                displayTwoDots(200, 115 + i * 40 + 15);
             }
 
             displaySegment(clock[i].getSegments(), 200, 115 + i*40 + dots*15);
