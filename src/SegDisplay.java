@@ -1,3 +1,6 @@
+/**
+ * 7 segment display for each digit is based on the Wikipedia reference.
+ */
 public class SegDisplay {
 
     public static final boolean[] zero = new boolean[] {true, true, true, true, true, true, false};
@@ -15,12 +18,19 @@ public class SegDisplay {
     // a,   b,         c,         d,   e,        f,        g
     private boolean[] segments;
 
+    /**
+     * Creates a display with no sections turned on.
+     */
     public SegDisplay() {
         segments = new boolean[] {false, false, false, false, false, false, false};
     }
 
-    public SegDisplay(int start) {
-        switch(start) {
+    /**
+     * Creates a display that shows a number from the start.
+     * @param num a number int
+     */
+    public SegDisplay(int num) {
+        switch(num) {
             case 0: segments = zero; break;
             case 1: segments = one; break;
             case 2: segments = two; break;
@@ -34,6 +44,10 @@ public class SegDisplay {
         }
     }
 
+    /**
+     * Returns the number that would be displayed on 7-segment
+     * @return
+     */
     public int getNumber() {
         if (segments == zero) {
             return 0;
@@ -60,6 +74,10 @@ public class SegDisplay {
         return -1;
     }
 
+    /**
+     * Change the number that would be displayed.
+     * @param n
+     */
     public void setSegments(int n) {
         switch(n) {
             case 0: segments = zero; break;
@@ -75,6 +93,10 @@ public class SegDisplay {
         }
     }
 
+    /**
+     * Get the 7 segments that would display a number
+     * @return
+     */
     public boolean[] getSegments() {
         return segments;
     }
